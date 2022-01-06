@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.31321.278
+VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.Models", "NotesModels\Notes.Models.csproj", "{D17E8910-46BE-4AF5-BD21-04E961520501}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.Controllers", "Notes.Controllers.csproj", "{AFAF4384-BD4C-4F47-9226-39CE030FE952}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.Controllers", "NotesCotrollers\Notes.Controllers.csproj", "{AFAF4384-BD4C-4F47-9226-39CE030FE952}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.Models", "..\NotesModels\Notes.Models.csproj", "{D17E8910-46BE-4AF5-BD21-04E961520501}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,19 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D17E8910-46BE-4AF5-BD21-04E961520501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D17E8910-46BE-4AF5-BD21-04E961520501}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D17E8910-46BE-4AF5-BD21-04E961520501}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D17E8910-46BE-4AF5-BD21-04E961520501}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AFAF4384-BD4C-4F47-9226-39CE030FE952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AFAF4384-BD4C-4F47-9226-39CE030FE952}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFAF4384-BD4C-4F47-9226-39CE030FE952}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFAF4384-BD4C-4F47-9226-39CE030FE952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D17E8910-46BE-4AF5-BD21-04E961520501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D17E8910-46BE-4AF5-BD21-04E961520501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D17E8910-46BE-4AF5-BD21-04E961520501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D17E8910-46BE-4AF5-BD21-04E961520501}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9E6EB5D0-F6AE-42EA-BED4-6AE283A20582}
+		SolutionGuid = {4DD7479F-442B-4401-8EA4-049F539BD7DB}
 	EndGlobalSection
 EndGlobal
