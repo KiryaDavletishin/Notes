@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.Models", "NotesModels
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes.Controllers", "NotesCotrollers\Notes.Controllers.csproj", "{AFAF4384-BD4C-4F47-9226-39CE030FE952}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notes", "Notes\Notes.csproj", "{D0BC053D-CC1F-414F-8AA4-0115DDC60152}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes", "Notes\Notes.csproj", "{A7858755-8EF3-4539-9598-8591E63978AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{AFAF4384-BD4C-4F47-9226-39CE030FE952}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFAF4384-BD4C-4F47-9226-39CE030FE952}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFAF4384-BD4C-4F47-9226-39CE030FE952}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D0BC053D-CC1F-414F-8AA4-0115DDC60152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0BC053D-CC1F-414F-8AA4-0115DDC60152}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0BC053D-CC1F-414F-8AA4-0115DDC60152}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D0BC053D-CC1F-414F-8AA4-0115DDC60152}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7858755-8EF3-4539-9598-8591E63978AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7858755-8EF3-4539-9598-8591E63978AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7858755-8EF3-4539-9598-8591E63978AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7858755-8EF3-4539-9598-8591E63978AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

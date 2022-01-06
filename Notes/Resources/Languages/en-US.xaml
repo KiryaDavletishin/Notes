@@ -1,0 +1,40 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:Notes">
+    <v:String x:Key="FileMenu">_File</v:String>
+    <v:String x:Key="NewMenu">Create</v:String>
+    <v:String x:Key="OpenMenu">Open</v:String>
+    <v:String x:Key="SaveMenu">Save</v:String>
+    <v:String x:Key="SaveAsMenu">Save As</v:String>
+    <v:String x:Key="FindMenu">Find</v:String>
+    <v:String x:Key="DeleteMenu">Close</v:String>
+    <v:String x:Key="EditMenu">_Edit</v:String>
+    <v:String x:Key="CutMenu">Cut</v:String>
+    <v:String x:Key="PasteMenu">Paste</v:String>
+    <v:String x:Key="CopyMenu">Copy</v:String>
+    <v:String x:Key="UndoMenu">Undo</v:String>
+    <v:String x:Key="RedoMenu">Redo</v:String>
+    <v:String x:Key="SearchText">Search...</v:String>
+    <v:String x:Key="NoteNameText">Note name</v:String>
+    <v:String x:Key="OptionsMenu">_Options</v:String>
+    <v:String x:Key="LangMenu">Language</v:String>
+    <v:String x:Key="RuLang">Russian</v:String>
+    <v:String x:Key="EngLang">English</v:String>
+    <Image x:Key="Bold">
+        <Image.Source>
+            <BitmapImage UriSource="/Resources/Icons/en-US/RTF_BOLD.GIF"/>
+        </Image.Source>
+    </Image>
+    <Image x:Key="Italic">
+        <Image.Source>
+            <BitmapImage UriSource="/Resources/Icons/en-US/rtf_italic.gif"/>
+        </Image.Source>
+    </Image>
+    <Image x:Key="Underline">
+        <Image.Source>
+            <BitmapImage UriSource="/Resources/Icons/en-US/rtf_underline.gif"/>
+        </Image.Source>
+    </Image>
+    <v:String x:Key="NewFileName">New note</v:String>
+</ResourceDictionary>

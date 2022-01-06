@@ -2,8 +2,112 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Notes"
-             StartupUri="MainWindow.xaml">
+             xmlns:models="clr-namespace:Notes.Models;assembly=Notes.Models"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             StartupUri="MainWindow.xaml" Startup="Application_Startup"
+             DispatcherUnhandledException="Application_DispatcherUnhandledException">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Languages/ru-RU.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <local:DateConverter x:Key="DateConverter"/>
+            <DataTemplate x:Key="listItemView" DataType="{x:Type models:INote}">
+                <Border x:Name="border" CornerRadius="3" BorderThickness="1" BorderBrush="Black" Background="AliceBlue">
+                    <Grid Name="NoteItemGrid" HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="120"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock x:Name="itemName" Text="{Binding Path=Name}" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"/>
+                        <TextBlock x:Name="itemDate" Text="{Binding Path=Date, Converter={StaticResource DateConverter}}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="5"/>
+                        <TextBlock FontSize="20" x:Name="tempSymb" Text="" Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5"/>
+                    </Grid>
+                </Border>
+                <DataTemplate.Triggers>
+                    <DataTrigger Binding="{Binding Path=IsModified}" Value="true">
+                        <Setter Property="Border.Background" Value="LightPink" TargetName="border"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding Path=IsTemp}" Value="True">
+                        <Setter Property="TextBlock.Text" Value="***" TargetName="tempSymb"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=ListBoxItem}, Path=IsSelected}" Value="True">
+                        <Setter Property="Border.Background" Value="DodgerBlue" TargetName="border"/>
+                        <Setter Property="Border.BorderThickness" Value="2" TargetName="border"/>
+                        <Setter Property="TextBlock.Foreground" Value="White"/>
+                    </DataTrigger>
+                    <MultiDataTrigger>
+                        <MultiDataTrigger.Conditions>
+                            <Condition Binding="{Binding Path=IsModified}" Value="True"/>
+                            <Condition Binding="{Binding RelativeSource={RelativeSource AncestorType=ListBoxItem}, Path=IsSelected}" Value="True"/>
+                        </MultiDataTrigger.Conditions>
+                        <Setter Property="Border.Background" Value="IndianRed" TargetName="border"/>
+                        <Setter Property="Border.BorderThickness" Value="2" TargetName="border"/>
+                        <Setter Property="TextBlock.Foreground" Value="White"/>
+                    </MultiDataTrigger>
+                    <MultiDataTrigger>
+                        <MultiDataTrigger.Conditions>
+                            <Condition Binding="{Binding RelativeSource={RelativeSource AncestorType=ListBoxItem}, Path=IsSelected}" Value="False"/>
+                            <Condition Binding="{Binding RelativeSource={RelativeSource AncestorType=ListBoxItem}, Path=IsMouseOver}" Value="True"/>
+                        </MultiDataTrigger.Conditions>
+                        <Setter Property="Border.Background" Value="LightCyan" TargetName="border"/>
+                    </MultiDataTrigger>
+                    <MultiDataTrigger>
+                        <MultiDataTrigger.Conditions>
+                            <Condition Binding="{Binding RelativeSource={RelativeSource AncestorType=ListBoxItem}, Path=IsSelected}" Value="False"/>
+                            <Condition Binding="{Binding Path=IsModified}" Value="True"/>
+                            <Condition Binding="{Binding RelativeSource={RelativeSource AncestorType=ListBoxItem}, Path=IsMouseOver}" Value="True"/>
+                        </MultiDataTrigger.Conditions>
+                        <Setter Property="Border.Background" Value="Pink" TargetName="border"/>
+                    </MultiDataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+
+            <Style x:Key="AddButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="Background" Value="Lime" />
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border CornerRadius="5" Background="{TemplateBinding Background}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="Green"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="DeleteButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="Background" Value="Red" />
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="DarkRed"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
